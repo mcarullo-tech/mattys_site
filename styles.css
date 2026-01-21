@@ -97,3 +97,17 @@ img:hover {
   text-decoration: none;      /* prevents hover underline */
   color: inherit;             /* prevents hover color change */
 }
+
+
+.blog-nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.blog-nav a {
+  color: inherit;             /* makes link adopt normal text color */
+  text-decoration: none;      /* removes underline */
+  cursor: pointer; 
+}
