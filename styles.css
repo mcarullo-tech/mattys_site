@@ -47,13 +47,23 @@ section {
   height: auto;
 }
 
+
 img {
   display: block;
-  margin: 10px auto;  
-  max-width: 300px;    
-  width: 100%;         
-  height: auto;        
+  margin: 10px auto;
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
+
+img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(99, 99, 99, 0.6);
+}
+
+
 
 .blog-posts {
   margin-top: 20px;
@@ -66,7 +76,6 @@ img {
   padding: 15px;
   border-radius: 8px;
   text-decoration: none;
-  color: #222;                 /* readable text */
   margin: 10px 0;
   border: 1px solid #ddd;
   transition: 0.2s ease;
@@ -76,4 +85,15 @@ img {
   background: #e9e9e9;
   transform: translateY(-3px);
   border-color: #ccc;
+}
+
+.blog-card a {
+  color: inherit;             /* makes link adopt normal text color */
+  text-decoration: none;      /* removes underline */
+  cursor: pointer;            /* keeps clickable feel */
+}
+
+.blog-card a:hover {
+  text-decoration: none;      /* prevents hover underline */
+  color: inherit;             /* prevents hover color change */
 }
