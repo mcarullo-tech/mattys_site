@@ -1,36 +1,46 @@
-
-
+/* GLOBAL RESET + BASE */
 body {
-  background: url("images/sleeping_kitty.png");
-  background-repeat: repeat;
-  background-size: 200px;   /* adjust this to shrink/enlarge the tiles */
-  background-attachment: fixed; /* optional: makes it feel smoother */
-  color: #e0e0e0;
+  background: url("images/sleeping_kitty.png") repeat fixed;
+  background-size: 200px;
+  color: #e6e6e6;
   margin: 0;
   padding: 0;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Press Start 2P', cursive; /* keep or change */
 }
 
+/* MAIN CONTENT CONTAINER */
 .content-container {
-  background: rgba(0, 0, 0, 0.753);  /* semi-transparent dark box */
-  padding: 0px;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 0;
   border-radius: 24px;
   max-width: 900px;
   margin: 40px auto;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
+/* HEADER */
 header {
   background: #171717;
   color: #fff;
-  padding: 6px 0;
+  padding: 10px 0 6px 0;
   text-align: center;
   border-radius: 24px 24px 0 0;
 }
 
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  color: #ffffff;
+  text-shadow: none; /* remove neon glow */
+}
+
+/* NAVIGATION */
 nav ul {
   list-style: none;
-  padding: 0;
+  padding: 10px;
+  margin: 0;
 }
 
 nav ul li {
@@ -38,42 +48,40 @@ nav ul li {
   margin: 0 15px;
 }
 
-
 nav ul li a {
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
   padding: 5px 8px;
   display: inline-block;
-  transition: transform 0.2s ease, text-shadow 0.2s ease, color 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 nav ul li a:hover {
-  transform: scale(1.15);
-  color: var(--accent);
-  text-shadow: 0 0 10px var(--accent), 0 0 20px rgba(0, 212, 255, 0.5);
+  transform: scale(1.1);
+  opacity: 0.8;
 }
 
-
+/* SECTIONS */
 section {
   padding: 20px;
   max-width: 800px;
   margin: 0 auto;
 }
 
+/* GALLERY */
 .gallery {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .gallery img {
-  display: flex;
-  flex-wrap: wrap;
   margin: 10px;
   max-width: 300px;
   height: auto;
 }
 
-
+/* GLOBAL IMAGE STYLE */
 img {
   display: block;
   margin: 10px auto;
@@ -81,13 +89,25 @@ img {
   width: 100%;
   height: auto;
   border-radius: 18px;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 img:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 20px rgba(255,255,255,0.15); /* soft, not neon */
 }
+
+/* ABOUT SECTION */
+
+
+.about-img {
+  width: 250px;
+  max-width: 250px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  margin: 0;
+}
+
 
 .about-wrapper {
   display: flex;
@@ -95,56 +115,52 @@ img:hover {
   gap: 20px;
 }
 
-.about-img {
-  width: 250px;           /* or whatever size you want */
-  max-width: 250px;
-  border-radius: 12px;
-  flex-shrink: 0;
-  display: block;         /* safe */
-}
-
 .about-text {
   flex: 1;
   line-height: 1.6;
+  margin-top: 0;         /* remove any top margin */
+  padding-top: 0;        /* remove any top padding */
+}
+
+.about-text p:first-child {
+  margin-top: 0;         /* ensure first paragraph starts flush */
 }
 
 
-
-.blog-posts {
+.about-text-full {
   margin-top: 20px;
 }
 
+/* BLOG CARDS */
 .blog-card {
-  display: inline-block;       /* no more full-width stretch */
-  max-width: 300px;            /* smaller card */
+  display: inline-block;
+  max-width: 300px;
   background: #2a2a2a;
   padding: 15px;
   border-radius: 8px;
   text-decoration: none;
   margin: 10px 0;
   border: 1px solid #444;
-  transition: 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .blog-card:hover {
   background: #333;
   transform: translateY(-3px);
-  border-color: var(--accent);
-  box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+  border-color: #666; /* neutral, not neon */
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 
 .blog-card a {
-  color: var(--accent);
+  color: #ffffff;
   text-decoration: none;
-  cursor: pointer;
 }
 
 .blog-card a:hover {
-  text-decoration: none;      /* prevents hover underline */
-  color: inherit;             /* prevents hover color change */
+  opacity: 0.8;
 }
 
-
+/* BLOG NAV */
 .blog-nav {
   display: flex;
   justify-content: center;
@@ -153,12 +169,11 @@ img:hover {
 }
 
 .blog-nav a {
-  color: var(--accent);
+  color: #ffffff;
   text-decoration: none;
-  cursor: pointer;
-  transition: text-shadow 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 
 .blog-nav a:hover {
-  text-shadow: 0 0 8px var(--accent);
+  opacity: 0.7;
 }
